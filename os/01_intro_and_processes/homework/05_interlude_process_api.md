@@ -134,4 +134,71 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-6. 
+6. **Write a slight modification of the previous program, this time using waitpid() instead of wait(). When would waitpid() be useful?**
+- `waitpid()` can be useful when you need to wait for a specific child to return, since you can specify which PID you want to wait for.
+```c
+-               wait(NULL)
++               waitpid(rc, NULL, 0);
+```
+
+7. **Write a program that creates a child process, and then in the child closes standard output (STDOUT FILENO). What happens if the child calls printf() to print some output after closing the descriptor?**
+- Nothing gets printed by the child
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/wait.h>
+
+int main(int argc, char *argv[]) {
+        int rc = fork();
+
+        if (rc < 0) {
+                printf("fork failed\n");
+                exit(1);
+        }
+
+        if (rc == 0) {
+                close(STDOUT_FILENO);
+                printf("child\n");
+        } else {
+                printf("parent\n");
+        }
+
+        return 0;
+}
+```
+
+8. **Write a program that creates two children, and connects the standard output of one to the standard input of the other, using the pipe() system call.**
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/wait.h>
+
+//   A's stdout    pipe write   pipe read    B's stdin
+// A <--------------------> PIPE <--------------------> B
+
+int main(int argc, char *argv[]) {
+        char str[100];
+        int pidA, pidB;
+        int pipefds[2]; // [read end, write end]
+        pipe(pipefds);
+
+        if( !(pidA = fork()) ) {
+                // this runs on child A
+                dup2(pipefds[1], 1);
+                printf("this is child A");
+        }
+
+        if( !(pidB = fork()) ) {
+                // this runs on child B
+                dup2(pipefds[0], 0);
+                fgets(str, 16, stdin);
+                printf("child B read (%s) from child A\n", str);
+        }
+
+        return 0;
+}
+```

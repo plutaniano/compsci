@@ -4,19 +4,26 @@
 #include <string.h>
 #include <sys/wait.h>
 
-int main(int argc, char *argv[]) {
-	int rc = fork();
+//   A's stdout    pipe write   pipe read    B's stdin
+// A <--------------------> PIPE <--------------------> B
 
-	if (rc < 0) {
-		printf("fork failed\n");
-		exit(1);
+int main(int argc, char *argv[]) {
+	char str[100];
+	int pidA, pidB;
+	int pipefds[2]; // [read end, write end]
+	pipe(pipefds);
+
+	if( !(pidA = fork()) ) {
+		// this runs on child A
+		dup2(pipefds[1], 1);
+		printf("this is child A");
 	}
 
-	if (rc == 0) {
-		fprintf(stdout, "child\n");
-	} else {
-		wait(NULL);
-		fprintf(stdout, "parent\n");
+	if( !(pidB = fork()) ) {
+		// this runs on child B
+		dup2(pipefds[0], 0);
+		fgets(str, 16, stdin);
+		printf("child B read (%s) from child A\n", str);
 	}
 
 	return 0;

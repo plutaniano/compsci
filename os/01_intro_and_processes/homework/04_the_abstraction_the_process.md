@@ -24,4 +24,3 @@
 8. **Now run with some randomly generated processes: -s 1 -l 3:50,3:50 or -s 2 -l 3:50,3:50 or -s 3 -l 3:50,3:50. See if you can predict how the trace will turn out. What happens when you use the flag -I IO RUN IMMEDIATE vs. -I IO RUN LATER? What happens when you use -S SWITCH ON IO vs. -S SWITCH ON END?**
 - Using SWITCH_ON_END the programs take much longer to complete because the CPU wastes a lot of time waiting for IO to be done compared to when using SWITCH_ON_IO.
 - Using IO_RUN_IMMEDIATE vs IO_RUN_LATER doesnt make a difference in the cases provided, because all processes are IO bound.
-
