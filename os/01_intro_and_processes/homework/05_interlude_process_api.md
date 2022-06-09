@@ -1,10 +1,6 @@
 
 ### [Code](https://pages.cs.wisc.edu/~remzi/Classes/537/Spring2018/Book/cpu-api.pdf)
-1. **Write a program that calls fork(). Before calling fork(), have the  
-main process access a variable (e.g., x) and set its value to some-  
-thing (e.g., 100). What value is the variable in the child process?  
-What happens to the variable when both the child and parent change  
-the value of x?
+1. **Write a program that calls fork(). Before calling fork(), have the main process access a variable (e.g., x) and set its value to something (e.g., 100). What value is the variable in the child process? What happens to the variable when both the child and parent change the value of x?**
 - Each of the processes has its own variable, so if the child modifies it, it doesn't  affect the parent, or vice-versa.
 ```c
 #include <stdio.h>
@@ -37,11 +33,7 @@ int main(int argc, char *argv[]) {
 // Parent process. x is 100
 ```
 
-2. **Write a program that opens a file (with the open() system call)  
-and then calls fork() to create a new process. Can both the child  
-and parent access the file descriptor returned by open()? What  
-happens when they are writing to the file concurrently, i.e., at the  
-same time?
+2. **Write a program that opens a file (with the open() system call) and then calls fork() to create a new process. Can both the child and parent access the file descriptor returned by open()? What happens when they are writing to the file concurrently, i.e., at the same time?**
 - Both processes can access the file, the order depends on the OS scheduler.
 ```c
 #include <stdio.h>
@@ -80,10 +72,7 @@ int main(int argc, char *argv[]) {
 // the order depends on how the processes are scheduled by the os
 ```
 
-3. **Write another program using fork(). The child process should  
-print “hello”; the parent process should print “goodbye”. You should  
-try to ensure that the child process always prints first; can you do  
-this without calling wait() in the parent?
+3. **Write another program using fork(). The child process should print “hello”; the parent process should print “goodbye”. You should  try to ensure that the child process always prints first; can you do this without calling wait() in the parent?**
 
 ?? #todo
 
@@ -117,7 +106,7 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-5. **Now write a program that uses `wait()` to wait for the child process to finish in the parent. What does `wait()` return? What happens if you use `wait()` in the child?
+5. **Now write a program that uses `wait()` to wait for the child process to finish in the parent. What does `wait()` return? What happens if you use `wait()` in the child?**
 - `wait()` returns the PID of the terminated child process on success. On error it returns `-1`. `wait()` always returns `-1` on the child process.
 ```c
 #include <stdio.h>
