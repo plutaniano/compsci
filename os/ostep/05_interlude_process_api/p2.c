@@ -4,7 +4,7 @@
 #include <sys/wait.h>
 
 int main(int argc, char *argv[]) {
-	printf("hello wolrd (pid:%d)\n", (int) getpid());
+	printf("hello world (pid:%d)\n", (int) getpid());
 	int rc = fork();
 	if (rc < 0) {
 		fprintf(stderr, "fork failed\n");

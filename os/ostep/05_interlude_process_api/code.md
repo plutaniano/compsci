@@ -1,5 +1,6 @@
+# Homework
+## Code
 
-### [Code](https://pages.cs.wisc.edu/~remzi/Classes/537/Spring2018/Book/cpu-api.pdf)
 1. **Write a program that calls fork(). Before calling fork(), have the main process access a variable (e.g., x) and set its value to something (e.g., 100). What value is the variable in the child process? What happens to the variable when both the child and parent change the value of x?**
 - Each of the processes has its own variable, so if the child modifies it, it doesn't  affect the parent, or vice-versa.
 ```c
