@@ -22,7 +22,7 @@ https://pages.cs.wisc.edu/~remzi/Classes/537/Spring2018/
 ## OSTEP Chapters
 
 ### Virtualization
-- [ ] Dialogue
+- [x] Dialogue
 - [x] Processes
 - [x] Process API
 - [x] Direct Execution
@@ -47,11 +47,11 @@ https://pages.cs.wisc.edu/~remzi/Classes/537/Spring2018/
 
 ### Concurrency
 - [ ] Dialogue
-- [ ] COncurrency and Threads
+- [ ] Concurrency and Threads
 - [ ] Thread API
 - [ ] Locks
 - [ ] Locked Data Structures
-- [ ] COndition Variables
+- [ ] Condition Variables
 - [ ] Semaphores
 - [ ] Concurrency Bugs
 - [ ] Event-based Concurrency
