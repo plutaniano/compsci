@@ -2,29 +2,19 @@
 
 1. **Compute the response time and turnaround time when running three jobs of length 200 with the SJF and FIFO schedulers**
 
-**FIFO**
-response time = (0 + 200 + 400) / 3 = 200
-turnaround time = (200 + 400 + 600) / 3 = 400
+**FIFO**: response time = (0 + 200 + 400) / 3 = 200 | turnaround time = (200 + 400 + 600) / 3 = 400
 
-**SJF**
-response time = (0 + 200 + 400) / 3 = 200
-turnaround time = (200 + 400 + 600) / 3 = 400
+**SJF**: response time = (0 + 200 + 400) / 3 = 200 | turnaround time = (200 + 400 + 600) / 3 = 400
 
 2. **Now do the same but with jobs of different lengths: 100, 200, and 300.**
 
-**FIFO**
-response time = (0 + 100 + 300) / 3 = 133.33
-turnaround time = (100 + 300 + 600) / 3 = 333.33
+**FIFO**: response time = (0 + 100 + 300) / 3 = 133.33 | turnaround time = (100 + 300 + 600) / 3 = 333.33
 
-**SJF**
-response time = (0 + 100 + 300) / 3 = 133.33
-turnaround time = (100 + 300 + 600) / 3 = 333.33
+**SJF**: response time = (0 + 100 + 300) / 3 = 133.33 | turnaround time = (100 + 300 + 600) / 3 = 333.33
 
 3. **Now do the same, but also with the RR scheduler and a time-slice of 1.**
 
-**RR**
-response time = (0 + 1 + 2) / 3 = 1
-turnaround time = (298 + 499 + 600) / 3 = 465.67
+**RR**: response time = (0 + 1 + 2) / 3 = 1 | turnaround time = (298 + 499 + 600) / 3 = 465.67
 
 4. **For what types of workloads does SJF deliver the same turnaround times as FIFO?**
 
