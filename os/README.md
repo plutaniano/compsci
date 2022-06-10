@@ -3,7 +3,7 @@ https://pages.cs.wisc.edu/~remzi/Classes/537/Spring2018/
 
 ## Lectures
 - [x]  ~~Intro / Processes~~ (2022-06-07)
-- [ ] Scheduler
+- [x] ~~Scheduler~~
 - [ ] Memory Management / Paging
 - [ ] Paging: TLBs / Paging: Smaller
 - [ ] Beyond Physical / Review
