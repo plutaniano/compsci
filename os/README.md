@@ -26,8 +26,8 @@ https://pages.cs.wisc.edu/~remzi/Classes/537/Spring2018/
 - [x] Processes
 - [x] Process API
 - [x] Direct Execution
-- [ ] CPU Scheduling
-- [ ] Multi-level Feedback
+- [x] CPU Scheduling
+- [x] Multi-level Feedback
 - [ ] Lottery Scheduling
 - [ ] Multi-CPU Scheduling
 - [ ] Summary
