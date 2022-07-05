@@ -37,3 +37,28 @@ Bounds register: protection (check if it's within the address space)
 On every memory access, the MMU checks if the memory is within the AS for that process. If it's not, the hardware raises an exception, traps into the trap table and the process gets killed.
 
 Base/bounds: **fast and simple** but it's hard to allocate contigously, hard to expand and hard to share memory between processes.
+
+#### Roles of the OS:
+- when context switching, the OS needs to store the current process' base/bounds and restore the next process' base/bounds. Instructions to do this will need to run on privileged mode.
+- defragment the physical memory. Ideally, a process' AS should be one contiguous chunk of memory and all the free memory must also be one contiguous chunk of memory.
+
+RAM: from [       [...AS1...]      [...AS2...]    ]  to [[...AS2...][...AS1...]                 ]
+
+- stop processes before reallocating their AS.
+- copy the process' AS to new location, carefully
+- change the base to new value
+- make the process' runnable again
+
+- on a malloc() call, the OS needs to change the bounds register (after zeroing the memory, for security reasons)
+
+#### Generalizing base/bounds:
+- segmentation: multiple base/bounds per process, one per logic region of AS.
+
+virtual memory
+[[code][heap ->]        [<- stack]]
+
+physical memory
+[[code]      [<- stack]  [heap ->]]
+
+- no waste
+- os roles: still has to defrag memory, still has to save base/bound pairs, manage malloc() calls.

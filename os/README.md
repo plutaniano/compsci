@@ -4,7 +4,7 @@ https://pages.cs.wisc.edu/~remzi/Classes/537/Spring2018/
 ## Lectures
 - [x]  ~~Intro / Processes~~ (2022-06-07)
 - [x] ~~Scheduler~~ (2022-06-10)
-- [ ] Memory Management / Paging
+- [x] ~~Memory Management / Paging~~ (2022-07-05)
 - [ ] Paging: TLBs / Paging: Smaller
 - [ ] Beyond Physical / Review
 - [ ] Threads
