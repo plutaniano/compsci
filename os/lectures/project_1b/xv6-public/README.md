@@ -1,3 +1,22 @@
+A xv6 implementation that includes a getreadcount() syscall, a syscall 
+that returns the amount of times it has been called since system start!
+
+To run, make sure you have QEMU installed, then:
+
+```
+$ make qemu-nox
+```
+This will build and run xv6 in QEMU. When the system is done booting up,
+you can test the syscall by running the example program:
+```
+$ ./getreadcount
+The getreadcount syscall has been called 0 time(s)!
+$ ./getreadcount
+The getreadcount syscall has been called 1 time(s)!
+```
+
+--
+
 NOTE: we have stopped maintaining the x86 version of xv6, and switched
 our efforts to the RISC-V version
 (https://github.com/mit-pdos/xv6-riscv.git)

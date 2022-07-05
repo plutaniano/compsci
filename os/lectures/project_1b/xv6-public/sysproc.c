@@ -91,7 +91,8 @@ sys_uptime(void)
 }
 
 int READCOUNT = 0;
-int sys_getreadcount(void)
+int
+sys_getreadcount(void)
 {
 	return READCOUNT++;
 }

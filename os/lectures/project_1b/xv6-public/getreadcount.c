@@ -2,9 +2,9 @@
 #include "stat.h"
 #include "user.h"
 
-
-int main(int argc, char* argv[])
+int
+main(void)
 {
-	printf(1, "The syscall getreadcount() has been called %d time(s).\n", getreadcount());
+	printf(1, "The getreadcount syscall has been called %d time(s)!\n", getreadcount());
 	exit();
 }
