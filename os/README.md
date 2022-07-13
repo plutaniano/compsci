@@ -28,8 +28,8 @@ https://pages.cs.wisc.edu/~remzi/Classes/537/Spring2018/
 - [x] Direct Execution
 - [x] CPU Scheduling
 - [x] Multi-level Feedback
-- [ ] Lottery Scheduling
-- [ ] Multi-CPU Scheduling
+- [x] Lottery Scheduling
+- [x] Multi-CPU Scheduling
 - [ ] Summary
 - [ ] Dialogue
 - [ ] Address Space
